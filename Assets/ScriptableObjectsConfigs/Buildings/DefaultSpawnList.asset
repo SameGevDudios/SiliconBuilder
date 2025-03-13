@@ -17,11 +17,11 @@ MonoBehaviour:
     X: 3.5
     Y: 2.5
   - Name: SignSmall
-    X: -7.5
+    X: -4.5
     Y: -3.5
   - Name: TreeGreenSmall
     X: 0.5
     Y: -0.5
   - Name: TreeYellowSmall
-    X: 6.5
-    Y: -8.5
+    X: 2.5
+    Y: -6.5
