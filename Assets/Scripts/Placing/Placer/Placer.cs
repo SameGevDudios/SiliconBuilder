@@ -23,6 +23,11 @@ public class Placer : IPlacer
     }
     public void InstantiateBuildable(string name, Vector3 position) =>
         _currentBuildable = _poolManager.InstantiateFromPool(name, position, Quaternion.identity);
-    public void UpdatePosition(Vector3 newPosition) =>
-        _currentBuildable.transform.position = newPosition;
+    public void UpdatePosition(Vector3 newPosition)
+    {
+        if(_currentBuildable != null )
+        {
+            _currentBuildable.transform.position = newPosition;
+        }
+    }
 }
