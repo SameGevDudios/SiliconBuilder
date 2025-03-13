@@ -7,9 +7,10 @@ public class Remover : IRemover
     private IBuildablesListing _listing;
     private IBuildablesDataHandler _dataHandler;
 
-    public Remover(LayerMask removeMask) 
+    public Remover(LayerMask removeMask, IBuildablesListing listing) 
     {
         _removeMask = removeMask; 
+        _listing = listing;
     }
     public void Remove(Vector3 position)
     {
