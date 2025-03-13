@@ -32,7 +32,7 @@ public class Bootstrapper : MonoBehaviour
         _playerActions.Constructor(placeController, removeController, _placer);
 
         // Buttons
-        SetupBuildableButtons(_selector);
+        SetupBuildableButtons();
         SetupPlayerActionsButtons();
 
     }
@@ -41,12 +41,14 @@ public class Bootstrapper : MonoBehaviour
         _selector.SetCurrentBuildable(0);
         _placer.InstantiateCurrentBuildable();
     }
-    private void SetupBuildableButtons(ISelector selector)
+    private void SetupBuildableButtons()
     {
         for (int i = 0; i < _buildableButtons.Length; i++)
         {
             int index = i;
-            _buildableButtons[i].onClick.AddListener(() => selector.SetCurrentBuildable(index));
+            _buildableButtons[i].onClick.AddListener(() => _selector.SetCurrentBuildable(index));
+            _buildableButtons[i].onClick.AddListener(() => _placer.DisposeCurrentBuildable());
+            _buildableButtons[i].onClick.AddListener(() => _placer.InstantiateCurrentBuildable());
         }
     }
     private void SetupPlayerActionsButtons()
