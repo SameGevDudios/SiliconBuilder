@@ -16,6 +16,11 @@ public class Placer : IPlacer
         string name = _selector.GetCurrentBuildable().PoolingName;
         _currentBuildable = _poolManager.InstantiateFromPool(name, Vector3.zero, Quaternion.identity);
     }
+    public void DisposeCurrentBuildable()
+    {
+        _currentBuildable.SetActive(false);
+        _currentBuildable = null;
+    }
     public void InstantiateBuildable(string name, Vector3 position) =>
         _currentBuildable = _poolManager.InstantiateFromPool(name, position, Quaternion.identity);
     public void UpdatePosition(Vector3 newPosition) =>
