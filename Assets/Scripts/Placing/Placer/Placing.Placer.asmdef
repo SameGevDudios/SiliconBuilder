@@ -1,0 +1,16 @@
+{
+    "name": "Placing.Placer",
+    "rootNamespace": "",
+    "references": [
+        "GUID:78a19629d8a12e547ac3be1a4fdad482"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
