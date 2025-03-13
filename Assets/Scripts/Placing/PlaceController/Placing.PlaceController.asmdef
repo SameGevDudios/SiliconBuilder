@@ -1,10 +1,12 @@
 {
-    "name": "Placing.Placer",
+    "name": "Placing.PlaceController",
     "rootNamespace": "",
     "references": [
-        "GUID:78a19629d8a12e547ac3be1a4fdad482",
-        "GUID:1f605ac2c6f2f2447bf96f63fa0a694d",
-        "GUID:8eb99ebfb0b6dbe46b1e41350dfb1b1c"
+        "Placing.Placer",
+        "Input",
+        "Placing.Selector",
+        "ScriptableObjects.Buildings",
+        "Placing.Validation"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,8 +1,8 @@
 {
-    "name": "Placing",
+    "name": "Placing.Selector",
     "rootNamespace": "",
     "references": [
-        ""
+        "GUID:8eb99ebfb0b6dbe46b1e41350dfb1b1c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
