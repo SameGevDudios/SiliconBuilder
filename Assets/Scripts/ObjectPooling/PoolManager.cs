@@ -15,11 +15,6 @@ public class PoolManager : MonoBehaviour
     public List<Pool> Pools;
     public Dictionary<string, Queue<GameObject>> PoolDistionary;
 
-    #region Singleton
-    public static PoolManager Instance;
-    private void Awake() => Instance = this;
-    #endregion
-
     private void Start()
     {
         PoolDistionary = new Dictionary<string, Queue<GameObject>>();
