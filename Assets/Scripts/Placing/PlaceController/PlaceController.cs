@@ -8,6 +8,14 @@ public class PlaceController : IPlaceController
     private IPlacer _placer;
     private int _gridSize;
 
+    public PlaceController(IInput input, IPlaceValidator validator, ISelector selector, IPlacer placer, int gridSize)
+    {
+        _input = input;
+        _validator = validator;
+        _selector = selector;
+        _placer = placer;
+        _gridSize = gridSize;
+    }
     public void Update()
     {
         Vector3 gridPosition = GridPosition();
