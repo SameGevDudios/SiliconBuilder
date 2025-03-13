@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14620e004ce754e4a966de758d6e03b4, type: 3}
+  m_Name: DefaultSpawnList
+  m_EditorClassIdentifier: 
+  Buildings:
+  - Name: CartSmall
+    X: 3.5
+    Y: 2.5
+  - Name: SignSmall
+    X: -7.5
+    Y: -3.5
+  - Name: TreeGreenSmall
+    X: 0.5
+    Y: -0.5
+  - Name: TreeYellowSmall
+    X: 6.5
+    Y: -8.5
