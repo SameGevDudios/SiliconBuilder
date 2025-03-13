@@ -27,9 +27,9 @@ public class Bootstrapper : MonoBehaviour
         _playerActions.Constructor(placeController, removeController, placer);
 
         // Buttons
-        SetupButtons(selector);
+        SetupBuildableButtons(selector);
     }
-    private void SetupButtons(ISelector selector)
+    private void SetupBuildableButtons(ISelector selector)
     {
         for (int i = 0; i < _buildableButtons.Length; i++)
             _buildableButtons[i].onClick.AddListener(() => selector.SetCurrentBuildable(i));
