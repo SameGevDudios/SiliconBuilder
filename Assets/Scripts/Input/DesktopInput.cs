@@ -10,8 +10,6 @@ public class DesktopInput : IInput
     {
         _playerInput = playerInput;
     }
-    public Vector2 Movement() =>
-        _playerInput.actions["Move"].ReadValue<Vector2>();
     public Vector3 CursorWorldPosition()
     {
         Vector2 mousePosition = Mouse.current.position.ReadValue();
