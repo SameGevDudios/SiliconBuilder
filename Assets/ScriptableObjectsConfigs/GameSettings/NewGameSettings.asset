@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: NewGameSettings
   m_EditorClassIdentifier: 
   GridSize: 1
+  BuildablesAvalable: 3
   RemoveMask:
     serializedVersion: 2
     m_Bits: 64

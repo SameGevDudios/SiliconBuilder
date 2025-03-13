@@ -10,7 +10,7 @@ public class Bootstrapper : MonoBehaviour
     [SerializeField] private SpawnBuildingList _spawnList;
     [SerializeField] private GameSettings _gameSettings;
     [SerializeField] private PlayerActions _playerActions;
-    [SerializeField] private Button[] _buildableButtons;
+    [SerializeField] private GameObject _buildablesPanel, _buildableButton;
     [SerializeField] private Button _placeButton, _removeButton;
 
     ISelector _selector;
@@ -52,13 +52,14 @@ public class Bootstrapper : MonoBehaviour
     }
     private void SetupBuildableButtons()
     {
-        for (int i = 0; i < _buildableButtons.Length; i++)
+        for (int i = 0; i < _gameSettings.BuildablesAvalable; i++)
         {
+            Button button = Instantiate(_buildableButton, _buildablesPanel.transform).GetComponent<Button>();
             int index = i;
-            _buildableButtons[i].onClick.AddListener(() => _selector.SetCurrentBuildable(index));
-            _buildableButtons[i].onClick.AddListener(() => _placer.DisposeCurrentBuildable());
-            _buildableButtons[i].onClick.AddListener(() => _placer.InstantiateCurrentBuildable());
-            Transform child = _buildableButtons[i].transform.GetChild(0);
+            button.onClick.AddListener(() => _selector.SetCurrentBuildable(index));
+            button.onClick.AddListener(() => _placer.DisposeCurrentBuildable());
+            button.onClick.AddListener(() => _placer.InstantiateCurrentBuildable());
+            Transform child = button.transform.GetChild(0);
             child.GetComponent<Image>().sprite = _buildingList.Buildings[i].BuildingSprite;
         }
     }
