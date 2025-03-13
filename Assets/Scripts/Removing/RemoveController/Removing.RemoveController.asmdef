@@ -1,0 +1,17 @@
+{
+    "name": "Removing.RemoveController",
+    "rootNamespace": "",
+    "references": [
+        "GUID:45f7571b89d6a4248a86294ccea85a7e",
+        "GUID:89ba40676d15a2e4ea03cdd63cf86a44"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
