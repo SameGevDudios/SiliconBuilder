@@ -12,6 +12,7 @@ public class PlayerActions : MonoBehaviour
         _placeController = placeController;
         _removeController = removeController;
         _placer = placer;
+        _isPlacing = true;
     }
     private void Update()
     {
