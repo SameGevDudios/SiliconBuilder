@@ -49,6 +49,8 @@ public class Bootstrapper : MonoBehaviour
             _buildableButtons[i].onClick.AddListener(() => _selector.SetCurrentBuildable(index));
             _buildableButtons[i].onClick.AddListener(() => _placer.DisposeCurrentBuildable());
             _buildableButtons[i].onClick.AddListener(() => _placer.InstantiateCurrentBuildable());
+            Transform child = _buildableButtons[i].transform.GetChild(0);
+            child.GetComponent<Image>().sprite = _buildingList.Buildings[i].BuildingSprite;
         }
     }
     private void SetupPlayerActionsButtons()
