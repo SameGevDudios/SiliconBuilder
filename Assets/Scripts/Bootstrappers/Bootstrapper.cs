@@ -11,25 +11,35 @@ public class Bootstrapper : MonoBehaviour
     [SerializeField] private PlayerActions _playerActions;
     [SerializeField] private Button[] _buildableButtons;
     [SerializeField] private Button _placeButton, _removeButton;
+
+    ISelector _selector;
+    IPlacer _placer;
+
     private void Awake()
     {
         // Placing
         IInput input = new DesktopInput(_playerInput);
         IPlaceValidator validator = new RangeValidator();
-        ISelector selector = new Selector(_buildingList);
-        IPlacer placer = new Placer(selector, _poolManager);
-        IPlaceController placeController = new PlaceController(input, validator, selector, placer, _gameSettings.GridSize);
+        _selector = new Selector(_buildingList);
+        _placer = new Placer(_selector, _poolManager);
+        IPlaceController placeController = new PlaceController(input, validator, _selector, _placer, _gameSettings.GridSize);
 
         // Removing
         IRemover remover = new Remover(_gameSettings.RemoveMask);
         IRemoveController removeController = new RemoveController(input, remover);
 
         // Player Actions
-        _playerActions.Constructor(placeController, removeController, placer);
+        _playerActions.Constructor(placeController, removeController, _placer);
 
         // Buttons
-        SetupBuildableButtons(selector);
+        SetupBuildableButtons(_selector);
         SetupPlayerActionsButtons();
+
+    }
+    private void Start()
+    {
+        _selector.SetCurrentBuildable(0);
+        _placer.InstantiateCurrentBuildable();
     }
     private void SetupBuildableButtons(ISelector selector)
     {
