@@ -35,8 +35,8 @@ public class PlaceController : IPlaceController
     {
         Vector3 cursorPosition = _input.CursorWorldPosition();
         Vector3 gridPosition = new Vector3(
-            (int)(cursorPosition.x / _gridSize) * _gridSize,
-            (int)(cursorPosition.y / _gridSize) * _gridSize,
+            ((int)(cursorPosition.x / _gridSize) + _selector.GetCurrentBuildable().GridOffset) * _gridSize,
+            ((int)(cursorPosition.y / _gridSize) + _selector.GetCurrentBuildable().GridOffset) * _gridSize,
             (int)(cursorPosition.z / _gridSize) * _gridSize);
         return gridPosition;
     }
