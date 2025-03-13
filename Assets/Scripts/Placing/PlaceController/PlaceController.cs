@@ -6,7 +6,7 @@ public class PlaceController : IPlaceController
     private IPlaceValidator _validator;
     private ISelector _selector;
     private IPlacer _placer;
-    private int gridSize;
+    private int _gridSize;
 
     public void Update()
     {
@@ -27,9 +27,9 @@ public class PlaceController : IPlaceController
     {
         Vector3 cursorPosition = _input.CursorWorldPosition();
         Vector3 gridPosition = new Vector3(
-            (int)(cursorPosition.x / gridSize),
-            (int)(cursorPosition.y / gridSize),
-            (int)(cursorPosition.z / gridSize));
+            (int)(cursorPosition.x / _gridSize),
+            (int)(cursorPosition.y / _gridSize),
+            (int)(cursorPosition.z / _gridSize));
         return gridPosition;
     }
 }
