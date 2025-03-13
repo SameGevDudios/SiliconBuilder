@@ -13,7 +13,7 @@ public class DesktopInput : IInput
     public Vector3 CursorWorldPosition()
     {
         Vector2 mousePosition = Mouse.current.position.ReadValue();
-        Vector3 offset = Vector3.down * -10;
+        Vector3 offset = Vector3.forward * 10;
         return Camera.main.ScreenToWorldPoint(mousePosition) + offset;
     }
     public bool CursorDown() =>
