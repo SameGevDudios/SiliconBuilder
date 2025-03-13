@@ -12,11 +12,12 @@ public class PlaceController : IPlaceController
 
     public void Update()
     {
-        if (_validator.CanPlace(_input.CursorWorldPosition(), _selector.GetCurrentBuildable().Size / 2))
+        Vector3 gridPosition = GridPosition();
+        if (_validator.CanPlace(gridPosition, _selector.GetCurrentBuildable().Size / 2))
         {
             if (!_input.CursorOverUI())
             {
-                _placer.UpdatePosition(GridPosition());
+                _placer.UpdatePosition(gridPosition);
                 if (_input.CursorDown())
                 {
                     _placer.InstantiateCurrentBuildable();
