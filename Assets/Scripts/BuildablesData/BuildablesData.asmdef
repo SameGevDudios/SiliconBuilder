@@ -1,0 +1,17 @@
+{
+    "name": "BuildablesData",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8eb99ebfb0b6dbe46b1e41350dfb1b1c",
+        "GUID:5f5f9792bb1e65f4ca2a591e5d4a38a3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
