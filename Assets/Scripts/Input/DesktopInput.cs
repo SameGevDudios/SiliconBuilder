@@ -17,7 +17,7 @@ public class DesktopInput : IInput
         return Camera.main.ScreenToWorldPoint(mousePosition) + offset;
     }
     public bool CursorDown() =>
-        _playerInput.actions["CursorDown"].ReadValue<bool>();
+        _playerInput.actions["CursorDown"].triggered;
     public bool CursorOverUI() =>
         EventSystem.current.IsPointerOverGameObject();
 }
