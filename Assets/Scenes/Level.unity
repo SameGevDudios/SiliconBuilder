@@ -2018,6 +2018,7 @@ MonoBehaviour:
   _playerInput: {fileID: 164417187}
   _buildingList: {fileID: 11400000, guid: 58d0fac1873aa8f4192f3f875c8d2294, type: 2}
   _poolManager: {fileID: 1133851403}
+  _spawnList: {fileID: 11400000, guid: f6e79795c3576be458cf6aa05c2b72a1, type: 2}
   _gameSettings: {fileID: 11400000, guid: 89af31e561e52954eab694923522e16c, type: 2}
   _playerActions: {fileID: 1228041706}
   _buildableButtons:

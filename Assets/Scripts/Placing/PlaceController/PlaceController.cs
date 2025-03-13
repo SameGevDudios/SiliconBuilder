@@ -6,14 +6,19 @@ public class PlaceController : IPlaceController
     private IPlaceValidator _validator;
     private ISelector _selector;
     private IPlacer _placer;
+    private IBuildablesListing _listing;
+    private IBuildablesDataHandler _dataHandler;
     private int _gridSize;
 
-    public PlaceController(IInput input, IPlaceValidator validator, ISelector selector, IPlacer placer, int gridSize)
+    public PlaceController(IInput input, IPlaceValidator validator, ISelector selector, 
+        IPlacer placer, IBuildablesListing listing, IBuildablesDataHandler dataHandler, int gridSize)
     {
         _input = input;
         _validator = validator;
         _selector = selector;
         _placer = placer;
+        _listing = listing;
+        _dataHandler = dataHandler;
         _gridSize = gridSize;
     }
     public void Update()
@@ -27,6 +32,12 @@ public class PlaceController : IPlaceController
                 if (_input.CursorDown())
                 {
                     _placer.InstantiateCurrentBuildable();
+                    _listing.AddBuildable(
+                        _selector.GetCurrentBuildable().PoolingName,
+                        gridPosition.x,
+                        gridPosition.y
+                        );
+                    _dataHandler.SaveData();
                 }
             }
         }

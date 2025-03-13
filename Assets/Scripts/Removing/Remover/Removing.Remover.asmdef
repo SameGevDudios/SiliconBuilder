@@ -1,3 +1,16 @@
 {
-	"name": "Removing.Remover"
+    "name": "Removing.Remover",
+    "rootNamespace": "",
+    "references": [
+        "GUID:294afb6718e7b674396df5b2f1a0819d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

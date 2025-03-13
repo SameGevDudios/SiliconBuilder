@@ -7,6 +7,7 @@ public class Bootstrapper : MonoBehaviour
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private BuildingList _buildingList;
     [SerializeField] private PoolManager _poolManager;
+    [SerializeField] private SpawnBuildingList _spawnList;
     [SerializeField] private GameSettings _gameSettings;
     [SerializeField] private PlayerActions _playerActions;
     [SerializeField] private Button[] _buildableButtons;
@@ -14,6 +15,7 @@ public class Bootstrapper : MonoBehaviour
 
     ISelector _selector;
     IPlacer _placer;
+    IBuildablesDataHandler _dataHandler;
 
     private void Awake()
     {
@@ -22,7 +24,10 @@ public class Bootstrapper : MonoBehaviour
         IPlaceValidator validator = new RangeValidator();
         _selector = new Selector(_buildingList);
         _placer = new Placer(_selector, _poolManager);
-        IPlaceController placeController = new PlaceController(input, validator, _selector, _placer, _gameSettings.GridSize);
+        IBuildablesListing listing = new BuildablesListing();
+        _dataHandler = new JSONDataHandler(listing, _spawnList);
+        IPlaceController placeController = 
+            new PlaceController(input, validator, _selector, _placer, listing, _dataHandler, _gameSettings.GridSize);
 
         // Removing
         IRemover remover = new Remover(_gameSettings.RemoveMask);
@@ -40,6 +45,7 @@ public class Bootstrapper : MonoBehaviour
     {
         _selector.SetCurrentBuildable(0);
         _placer.InstantiateCurrentBuildable();
+        _dataHandler.LoadData();
     }
     private void SetupBuildableButtons()
     {

@@ -6,7 +6,8 @@
         "Input",
         "Placing.Selector",
         "ScriptableObjects.Buildings",
-        "Placing.Validation"
+        "Placing.Validation",
+        "BuildablesData"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
