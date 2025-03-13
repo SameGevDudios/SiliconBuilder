@@ -2,6 +2,7 @@ using UnityEngine;
 
 public interface IPlacer
 {
-    void InstantiateBuildable(string name);
+    void InstantiateCurrentBuildable();
+    void InstantiateBuildable(string name, Vector3 position);
     void UpdatePosition(Vector3 newPosition);
 }

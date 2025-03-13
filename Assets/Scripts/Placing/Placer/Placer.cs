@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class Placer : IPlacer
 {
+    private ISelector _selector;
     private PoolManager _poolManager;
     private GameObject _currentBuildable;
 
-    public Placer(PoolManager poolManager)
+    public Placer(ISelector selector, PoolManager poolManager)
     {
+        _selector = selector;
         _poolManager = poolManager;
     }
-    public void InstantiateBuildable(string name) =>
+    public void InstantiateCurrentBuildable()
+    {
+        string name = _selector.GetCurrentBuildable().PoolingName;
         _currentBuildable = _poolManager.InstantiateFromPool(name, Vector3.zero, Quaternion.identity);
+    }
     public void InstantiateBuildable(string name, Vector3 position) =>
         _currentBuildable = _poolManager.InstantiateFromPool(name, position, Quaternion.identity);
     public void UpdatePosition(Vector3 newPosition) =>
