@@ -11,7 +11,6 @@ public class PoolManager : MonoBehaviour
         public int Size;
     }
 
-
     public List<Pool> Pools;
     public Dictionary<string, Queue<GameObject>> PoolDistionary;
 
@@ -33,7 +32,6 @@ public class PoolManager : MonoBehaviour
             PoolDistionary.Add(pool.Tag, objectPool);
         }
     }
-
     public GameObject InstantiateFromPool(string tag, Vector3 position, Quaternion rotation)
     {
         if (!PoolDistionary.ContainsKey(tag))
