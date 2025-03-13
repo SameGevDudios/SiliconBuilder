@@ -10,6 +10,7 @@ public class Bootstrapper : MonoBehaviour
     [SerializeField] private GameSettings _gameSettings;
     [SerializeField] private PlayerActions _playerActions;
     [SerializeField] private Button[] _buildableButtons;
+    [SerializeField] private Button _placeButton, _removeButton;
     private void Awake()
     {
         // Placing
@@ -28,10 +29,16 @@ public class Bootstrapper : MonoBehaviour
 
         // Buttons
         SetupBuildableButtons(selector);
+        SetupPlayerActionsButtons();
     }
     private void SetupBuildableButtons(ISelector selector)
     {
         for (int i = 0; i < _buildableButtons.Length; i++)
             _buildableButtons[i].onClick.AddListener(() => selector.SetCurrentBuildable(i));
+    }
+    private void SetupPlayerActionsButtons()
+    {
+        _placeButton.onClick.AddListener(() => _playerActions.SwitchToPlace());
+        _removeButton.onClick.AddListener(() => _playerActions.SwitchToRemove());
     }
 }
