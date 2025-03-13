@@ -8,5 +8,5 @@ public class Building : ScriptableObject
     public string PoolingName;
     public int Size;
     public float GridOffset =>
-        Size % 2 == 0 ? 0 : 0.5f;
+        Size % 2 == 0 ? 0 : -0.5f;
 }
