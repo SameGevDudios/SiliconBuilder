@@ -44,7 +44,10 @@ public class Bootstrapper : MonoBehaviour
     private void SetupBuildableButtons(ISelector selector)
     {
         for (int i = 0; i < _buildableButtons.Length; i++)
-            _buildableButtons[i].onClick.AddListener(() => selector.SetCurrentBuildable(i));
+        {
+            int index = i;
+            _buildableButtons[i].onClick.AddListener(() => selector.SetCurrentBuildable(index));
+        }
     }
     private void SetupPlayerActionsButtons()
     {
