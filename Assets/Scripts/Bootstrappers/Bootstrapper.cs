@@ -31,7 +31,7 @@ public class Bootstrapper : MonoBehaviour
             new PlaceController(input, validator, _selector, _placer, _listing, _dataHandler, _gameSettings.GridSize);
 
         // Removing
-        IRemover remover = new Remover(_gameSettings.RemoveMask, _listing);
+        IRemover remover = new Remover(_gameSettings.RemoveMask, _listing, _dataHandler);
         IRemoveController removeController = new RemoveController(input, remover);
 
         // Player Actions
