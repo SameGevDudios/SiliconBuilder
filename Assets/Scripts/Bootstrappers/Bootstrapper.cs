@@ -13,10 +13,10 @@ public class Bootstrapper : MonoBehaviour
     [SerializeField] private GameObject _buildablesPanel, _buildableButton;
     [SerializeField] private Button _placeButton, _removeButton;
 
-    ISelector _selector;
-    IPlacer _placer;
-    IBuildablesListing _listing;
-    IBuildablesDataHandler _dataHandler;
+    private ISelector _selector;
+    private IPlacer _placer;
+    private IBuildablesListing _listing;
+    private IBuildablesDataHandler _dataHandler;
 
     private void Awake()
     {
