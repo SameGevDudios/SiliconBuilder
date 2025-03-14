@@ -18,7 +18,8 @@ public class Placer : IPlacer
     }
     public void DisposeCurrentBuildable()
     {
-        _currentBuildable.SetActive(false);
+        if(_currentBuildable != null)
+            _currentBuildable.SetActive(false);
         _currentBuildable = null;
     }
     public void InstantiateBuildable(string name, Vector3 position) =>
