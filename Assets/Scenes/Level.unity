@@ -1000,16 +1000,16 @@ MonoBehaviour:
     Size: 16
   - Tag: CartSmall
     ObjectToPool: {fileID: 7412415156564175645, guid: 2d8a5c01717c20a498aba74d58066a7a, type: 3}
-    Size: 1
+    Size: 144
   - Tag: SignSmall
     ObjectToPool: {fileID: 6648098249490911919, guid: a50344f06f953a547bd5321f272394e2, type: 3}
-    Size: 1
+    Size: 144
   - Tag: TreeGreenSmall
     ObjectToPool: {fileID: 7025909187535591604, guid: 971fd0e301a0ae649b6ca500f3fe129e, type: 3}
-    Size: 1
+    Size: 144
   - Tag: TreeYellowSmall
     ObjectToPool: {fileID: 2647461536037746085, guid: a3c291c801b18f247b9d613850ee6ef5, type: 3}
-    Size: 1
+    Size: 144
 --- !u!4 &1133851404
 Transform:
   m_ObjectHideFlags: 0
