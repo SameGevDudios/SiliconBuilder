@@ -27,12 +27,12 @@ public class Bootstrapper : MonoBehaviour
         _placer = new Placer(_selector, _poolManager);
         _listing = new BuildablesListing();
         _dataHandler = new JSONDataHandler(_listing, _spawnList);
-        IPlaceController placeController = 
+        IActor placeController = 
             new PlaceController(input, validator, _selector, _placer, _listing, _dataHandler, _gameSettings.GridSize);
 
         // Removing
         IRemover remover = new Remover(_gameSettings.RemoveMask, _listing, _dataHandler);
-        IRemoveController removeController = new RemoveController(input, remover);
+        IActor removeController = new RemoveController(input, remover);
 
         // Player Actions
         _playerActions.Constructor(placeController, removeController, _placer);
@@ -49,6 +49,7 @@ public class Bootstrapper : MonoBehaviour
         autoPlacer.Place();
         _selector.SetCurrentBuildable(0);
         _placer.InstantiateCurrentBuildable();
+        _playerActions.SwitchToPlace();
     }
     private void SetupBuildableButtons()
     {

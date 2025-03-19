@@ -2,9 +2,7 @@
     "name": "PlayerActions",
     "rootNamespace": "",
     "references": [
-        "GUID:06a76195b80f87249bf80453b3afacae",
-        "GUID:f109962a987f4cc4d926750d4bbb553f",
-        "GUID:e36f80e07d84aba4aafe1c4246f38ba9"
+        "GUID:f109962a987f4cc4d926750d4bbb553f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

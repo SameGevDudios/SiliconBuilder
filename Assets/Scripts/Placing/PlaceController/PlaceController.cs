@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlaceController : IPlaceController
+public class PlaceController : IActor
 {
     private IInput _input;
     private IPlaceValidator _validator;

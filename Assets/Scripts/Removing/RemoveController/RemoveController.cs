@@ -1,4 +1,4 @@
-public class RemoveController : IRemoveController
+public class RemoveController : IActor
 {
     private IInput _input;
     private IRemover _remover;
