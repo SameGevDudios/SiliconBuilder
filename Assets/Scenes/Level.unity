@@ -959,72 +959,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1133851402
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1133851404}
-  - component: {fileID: 1133851403}
-  m_Layer: 0
-  m_Name: PoolManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1133851403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133851402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f98f4a190e4846418682ac7a2beaef7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Pools:
-  - Tag: BuildingSmall
-    ObjectToPool: {fileID: 7108288134496353789, guid: 22f5d25e49c68d84c89212cfb0e5f55c, type: 3}
-    Size: 144
-  - Tag: BuildingMedium
-    ObjectToPool: {fileID: 1644835252422932968, guid: 536db96dc603da34496878d83309a3ba, type: 3}
-    Size: 36
-  - Tag: BuildingLarge
-    ObjectToPool: {fileID: 3325578286906300980, guid: c1f1d58bc79e72b49b3a0dcc3f20278d, type: 3}
-    Size: 16
-  - Tag: CartSmall
-    ObjectToPool: {fileID: 7412415156564175645, guid: 2d8a5c01717c20a498aba74d58066a7a, type: 3}
-    Size: 144
-  - Tag: SignSmall
-    ObjectToPool: {fileID: 6648098249490911919, guid: a50344f06f953a547bd5321f272394e2, type: 3}
-    Size: 144
-  - Tag: TreeGreenSmall
-    ObjectToPool: {fileID: 7025909187535591604, guid: 971fd0e301a0ae649b6ca500f3fe129e, type: 3}
-    Size: 144
-  - Tag: TreeYellowSmall
-    ObjectToPool: {fileID: 2647461536037746085, guid: a3c291c801b18f247b9d613850ee6ef5, type: 3}
-    Size: 144
---- !u!4 &1133851404
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133851402}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1228041705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,7 +1387,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 164417187}
   _buildingList: {fileID: 11400000, guid: 58d0fac1873aa8f4192f3f875c8d2294, type: 2}
-  _poolManager: {fileID: 1133851403}
   _spawnList: {fileID: 11400000, guid: f6e79795c3576be458cf6aa05c2b72a1, type: 2}
   _gameSettings: {fileID: 11400000, guid: 89af31e561e52954eab694923522e16c, type: 2}
   _playerActions: {fileID: 1228041706}
@@ -24698,7 +24631,6 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1382029323}
   - {fileID: 1759271579}
-  - {fileID: 1133851404}
   - {fileID: 164417188}
   - {fileID: 1228041707}
   - {fileID: 326356114}
