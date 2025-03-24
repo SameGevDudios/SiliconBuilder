@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: CartSmall
   m_EditorClassIdentifier: 
   BuildingSprite: {fileID: -411195532, guid: c89c03091fd9d984b82cb75eabedc4cf, type: 3}
-  PoolingName: CartSmall
   Size: 1
+  PoolingName: CartSmall
+  Prefab: {fileID: 7412415156564175645, guid: 2d8a5c01717c20a498aba74d58066a7a, type: 3}
+  PoolingSize: 144

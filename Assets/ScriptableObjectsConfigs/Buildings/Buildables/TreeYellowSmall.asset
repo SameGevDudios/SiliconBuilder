@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: TreeYellowSmall
   m_EditorClassIdentifier: 
   BuildingSprite: {fileID: -1533048281, guid: c89c03091fd9d984b82cb75eabedc4cf, type: 3}
-  PoolingName: TreeYellowSmall
   Size: 1
+  PoolingName: TreeYellowSmall
+  Prefab: {fileID: 2647461536037746085, guid: a3c291c801b18f247b9d613850ee6ef5, type: 3}
+  PoolingSize: 144

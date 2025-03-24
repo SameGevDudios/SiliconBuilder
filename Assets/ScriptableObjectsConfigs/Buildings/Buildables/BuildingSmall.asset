@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: BuildingSmall
   m_EditorClassIdentifier: 
   BuildingSprite: {fileID: 1640066994, guid: c89c03091fd9d984b82cb75eabedc4cf, type: 3}
-  PoolingName: BuildingSmall
   Size: 1
+  PoolingName: BuildingSmall
+  Prefab: {fileID: 7108288134496353789, guid: 22f5d25e49c68d84c89212cfb0e5f55c, type: 3}
+  PoolingSize: 144

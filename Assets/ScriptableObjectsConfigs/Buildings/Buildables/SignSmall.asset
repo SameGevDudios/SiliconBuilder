@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: SignSmall
   m_EditorClassIdentifier: 
   BuildingSprite: {fileID: -625332210, guid: c89c03091fd9d984b82cb75eabedc4cf, type: 3}
-  PoolingName: SignSmall
   Size: 1
+  PoolingName: SignSmall
+  Prefab: {fileID: 6648098249490911919, guid: a50344f06f953a547bd5321f272394e2, type: 3}
+  PoolingSize: 144
