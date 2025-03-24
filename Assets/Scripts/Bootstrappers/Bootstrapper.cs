@@ -6,17 +6,13 @@ public class Bootstrapper : MonoBehaviour
 {
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private BuildingList _buildingList;
-    [SerializeField] private PoolManager _poolManager;
     [SerializeField] private SpawnBuildingList _spawnList;
     [SerializeField] private GameSettings _gameSettings;
     [SerializeField] private PlayerActions _playerActions;
     [SerializeField] private GameObject _buildablesPanel, _buildableButton;
     [SerializeField] private Button _placeButton, _removeButton;
-
     private ISelector _selector;
     private IPlacer _placer;
-    private IBuildablesListing _listing;
-    private IBuildablesDataHandler _dataHandler;
 
     private void Awake()
     {
@@ -24,14 +20,15 @@ public class Bootstrapper : MonoBehaviour
         IInput input = new DesktopInput(_playerInput);
         IPlaceValidator validator = new RangeValidator();
         _selector = new Selector(_buildingList);
-        _placer = new Placer(_selector, _poolManager);
-        _listing = new BuildablesListing();
-        _dataHandler = new JSONDataHandler(_listing, _spawnList);
+        PoolManager poolManager = new PoolManager(_buildingList);
+        _placer = new Placer(_selector, poolManager);
+        IBuildablesListing listing = new BuildablesListing();
+        IBuildablesDataHandler dataHandler = new JSONDataHandler(listing, _spawnList);
         IActor placeController = 
-            new PlaceController(input, validator, _selector, _placer, _listing, _dataHandler, _gameSettings.GridSize);
+            new PlaceController(input, validator, _selector, _placer, listing, dataHandler, _gameSettings.GridSize);
 
         // Removing
-        IRemover remover = new Remover(_gameSettings.RemoveMask, _listing, _dataHandler);
+        IRemover remover = new Remover(_gameSettings.RemoveMask, listing, dataHandler);
         IActor removeController = new RemoveController(input, remover);
 
         // Player Actions
@@ -41,12 +38,17 @@ public class Bootstrapper : MonoBehaviour
         SetupBuildableButtons();
         SetupPlayerActionsButtons();
 
-    }
-    private void Start()
-    {
-        _dataHandler.LoadData();
-        IAutoPlacer autoPlacer = new AutoPlacer(_placer, _listing);
+        // Object pooling
+        poolManager.InitPools();
+
+        // Data
+        dataHandler.LoadData();
+
+        // Place buildables from saved data
+        IAutoPlacer autoPlacer = new AutoPlacer(_placer, listing);
         autoPlacer.Place();
+
+        // Setup components for player interactions
         _selector.SetCurrentBuildable(0);
         _placer.InstantiateCurrentBuildable();
         _playerActions.SwitchToPlace();
