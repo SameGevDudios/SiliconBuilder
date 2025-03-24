@@ -12,11 +12,11 @@ public class PoolManager : MonoBehaviour
     }
 
     public List<Pool> Pools;
-    public Dictionary<string, Queue<GameObject>> PoolDistionary;
+    public Dictionary<string, Queue<GameObject>> PoolDictionary;
 
     private void Start()
     {
-        PoolDistionary = new Dictionary<string, Queue<GameObject>>();
+        PoolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach(Pool pool in Pools)
         {
@@ -29,23 +29,23 @@ public class PoolManager : MonoBehaviour
                 objectPool.Enqueue(buffer);
             }
 
-            PoolDistionary.Add(pool.Tag, objectPool);
+            PoolDictionary.Add(pool.Tag, objectPool);
         }
     }
     public GameObject InstantiateFromPool(string tag, Vector3 position, Quaternion rotation)
     {
-        if (!PoolDistionary.ContainsKey(tag))
+        if (!PoolDictionary.ContainsKey(tag))
         {
             Debug.LogWarning("Pool with " + tag + " tag doesn't exist");
             return null;
         }
 
-        GameObject objectToSpawn = PoolDistionary[tag].Dequeue();
+        GameObject objectToSpawn = PoolDictionary[tag].Dequeue();
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
 
-        PoolDistionary[tag].Enqueue(objectToSpawn);
+        PoolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;
     }
