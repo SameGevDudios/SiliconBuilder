@@ -55,6 +55,11 @@ public class Bootstrapper : MonoBehaviour
     }
     private void SetupBuildableButtons()
     {
+        if(_gameSettings.BuildablesAvalable > _buildingList.Buildings.Count)
+        {
+            Debug.LogError("Cannot instantiate buttons. Value of avalable buildings in config is greater than actual building count.");
+            return;
+        }
         for (int i = 0; i < _gameSettings.BuildablesAvalable; i++)
         {
             Button button = Instantiate(_buildableButton, _buildablesPanel.transform).GetComponent<Button>();
