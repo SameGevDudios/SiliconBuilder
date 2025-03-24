@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "NewBuilding", menuName = "Buildings/Building")]
 public class Building : ScriptableObject
